@@ -16,8 +16,10 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0
 .badge{display:inline-block;padding:8px 14px;border:1px solid #294055;border-radius:20px;color:#00d4ff}
 .hero h1{font-size:4rem;max-width:1000px;margin:20px auto}
 .hero p{max-width:800px;margin:0 auto 30px;color:#a8bdd1}
-.hero img,.shot img,.graph img{width:100%;border-radius:18px;border:1px solid #22384d}
-section{padding:80px 0}
+.hero img{ width:100%; max-width:1200px; height:650px; object-fit:cover; border-radius:18px; border:1px solid #22384d; } 
+.graph img{ width:100%; max-width:1200px; height:600px; object-fit:cover; border-radius:18px; border:1px solid #22384d; } 
+.shot img{ width:100%; height:350px; object-fit:cover; border-radius:18px; border:1px solid #22384d; transition:.3s; } 
+.shot img:hover{ transform:scale(1.02); }
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .card,.stat{background:#0d1726;padding:24px;border-radius:16px;border:1px solid #1e3347}
 .stat h2{color:#00d4ff}
@@ -85,7 +87,12 @@ footer{text-align:center;padding:30px;border-top:1px solid #22384d}
 
 <section>
 <div class="container">
-<h2>Platform Screenshots</h2>
+<h2>See IntelScope in Action</h2>
+
+<p style="text-align:center;color:#a8bdd1;margin-bottom:40px;">
+From IOC investigations to threat actor tracking and graph-based correlation,
+IntelScope gives analysts a unified workspace for threat intelligence operations.
+</p>
 <div class="screens">
 <div class="shot"><img src="images/dashboard.png"></div>
 <div class="shot"><img src="images/iocs.png"></div>
@@ -116,12 +123,31 @@ footer{text-align:center;padding:30px;border-top:1px solid #22384d}
 <section id="demo">
 <div class="container center">
 <h2>Book a Demo</h2>
-<p>Replace the Calendly URL below with your own.</p>
+<p style="max-width:700px;margin:0 auto 40px;color:#a8bdd1;">
+Ready to see IntelScope in action?
+Book a 30-minute demo and explore how SOC and Threat Research teams can investigate faster,
+correlate intelligence automatically, and gain complete visibility into the threat landscape.
+</p>
+<div style=" background:#0d1726; padding:30px; border-radius:16px; border:1px solid #1e3347; max-width:900px; margin:0 auto 40px; ">
+	<h3 style="color:#00d4ff;margin-bottom:15px;"> What You'll See During the Demo </h3> 
+	<ul style="text-align:left;max-width:600px;margin:auto;color:#a8bdd1;"> 
+	<li>IOC search and enrichment workflows</li> 
+	<li>Threat Actor intelligence and attribution</li> 
+	<li>CVE and vulnerability intelligence tracking</li> 
+	<li>Threat correlation graph visualization</li> 
+	<li>Dark Web intelligence collection</li> 
+	<li>Security news aggregation and monitoring</li> 
+	</ul>
+</div>
 <div class="calendly-inline-widget" data-url="https://calendly.com/rudra9pratap/30min" style="min-width:320px;height:700px;"></div>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </div>
 </section>
 
-<footer>© 2026 IntelScope</footer>
+<footer> 
+<h3 style="color:#00d4ff;margin-bottom:10px;"> IntelScope </h3> 
+<p style="color:#8ea0b5;"> Unified Threat Intelligence Platform </p> 
+<p style="margin-top:15px;color:#6d8298;"> © 2026 IntelScope. All Rights Reserved. </p> 
+</footer>
 </body>
 </html>
