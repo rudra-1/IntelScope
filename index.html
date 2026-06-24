@@ -1,385 +1,127 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IntelScope | Unified Threat Intelligence Platform</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:#050816;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body::before{
-    content:'';
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:
-      radial-gradient(circle at 20% 20%, rgba(0,255,255,.08), transparent 30%),
-      radial-gradient(circle at 80% 30%, rgba(0,128,255,.08), transparent 30%),
-      radial-gradient(circle at 50% 80%, rgba(0,255,128,.05), transparent 30%);
-    z-index:-1;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 0;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:700;
-    color:#00d4ff;
-}
-
-.demo-btn{
-    background:#00d4ff;
-    color:#000;
-    text-decoration:none;
-    padding:12px 22px;
-    border-radius:8px;
-    font-weight:600;
-}
-
-.hero{
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    text-align:center;
-}
-
-.hero-content{
-    width:100%;
-}
-
-.hero h1{
-    font-size:4rem;
-    max-width:1000px;
-    margin:auto;
-    line-height:1.15;
-}
-
-.highlight{
-    color:#00d4ff;
-}
-
-.hero p{
-    margin-top:25px;
-    color:#b6c2d1;
-    font-size:1.2rem;
-    max-width:850px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.hero-actions{
-    margin-top:40px;
-}
-
-.primary-btn{
-    display:inline-block;
-    background:#00d4ff;
-    color:#000;
-    text-decoration:none;
-    padding:16px 30px;
-    border-radius:10px;
-    font-weight:700;
-    margin-right:15px;
-}
-
-.secondary-btn{
-    display:inline-block;
-    border:1px solid #00d4ff;
-    color:#00d4ff;
-    text-decoration:none;
-    padding:16px 30px;
-    border-radius:10px;
-}
-
-section{
-    padding:100px 0;
-}
-
-.section-title{
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:20px;
-}
-
-.section-subtitle{
-    text-align:center;
-    color:#9db0c5;
-    max-width:800px;
-    margin:0 auto 60px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:#0b1220;
-    border:1px solid rgba(255,255,255,.08);
-    padding:30px;
-    border-radius:16px;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color:#00d4ff;
-}
-
-.card h3{
-    margin-bottom:15px;
-}
-
-.card p{
-    color:#9db0c5;
-}
-
-.search-demo{
-    max-width:850px;
-    margin:auto;
-    background:#0b1220;
-    padding:35px;
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.search-box{
-    width:100%;
-    padding:18px;
-    border:none;
-    border-radius:12px;
-    background:#131d31;
-    color:white;
-    font-size:16px;
-}
-
-.result{
-    margin-top:25px;
-    display:none;
-}
-
-.result-card{
-    background:#131d31;
-    padding:20px;
-    border-radius:12px;
-}
-
-.cta{
-    text-align:center;
-}
-
-.cta h2{
-    font-size:3rem;
-}
-
-.cta p{
-    color:#9db0c5;
-    margin:20px 0 40px;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    border-top:1px solid rgba(255,255,255,.08);
-    color:#7f92a6;
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#07111d;color:#fff;line-height:1.6}
+.container{width:90%;max-width:1280px;margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.logo{font-size:32px;font-weight:800;color:#00d4ff}
+.btn{background:#00d4ff;color:#000;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700}
+.hero{text-align:center;padding:60px 0}
+.badge{display:inline-block;padding:8px 14px;border:1px solid #294055;border-radius:20px;color:#00d4ff}
+.hero h1{font-size:4rem;max-width:1000px;margin:20px auto}
+.hero p{max-width:800px;margin:0 auto 30px;color:#a8bdd1}
+.hero img,.shot img,.graph img{width:100%;border-radius:18px;border:1px solid #22384d}
+section{padding:80px 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card,.stat{background:#0d1726;padding:24px;border-radius:16px;border:1px solid #1e3347}
+.stat h2{color:#00d4ff}
+.trusted{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+.trusted div{text-align:center;background:#0d1726;padding:18px;border-radius:12px}
+.screens{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+h2{text-align:center;margin-bottom:20px}
+.center{text-align:center}
+footer{text-align:center;padding:30px;border-top:1px solid #22384d}
+@media(max-width:900px){
+.hero h1{font-size:2.3rem}
+.stats,.trusted,.screens,.features{grid-template-columns:1fr}
 }
 </style>
-
 </head>
-
 <body>
-
 <div class="container">
-
 <nav>
 <div class="logo">IntelScope</div>
-<a href="#demo" class="demo-btn">Book Demo</a>
+<a href="#demo" class="btn">Book Demo</a>
 </nav>
 
 <section class="hero">
+<span class="badge">Unified Threat Intelligence Platform</span>
+<h1>Centralized Threat Intelligence Workspace for SOC and Threat Research Teams</h1>
+<p>Manage and correlate IOCs, CVEs, Threat Actors, Dark Web Intelligence and Security News in a single searchable platform.</p>
+<a href="#demo" class="btn">Book a Demo</a>
 
-<div class="hero-content">
-
-<h1>
-Centralized Threat Intelligence Workspace for
-<span class="highlight">SOC & Threat Research Teams</span>
-</h1>
-
-<p>
-Manage and correlate IOCs, CVEs, Threat Actors,
-Dark Web Intelligence and Security News from a
-single searchable platform.
-</p>
-
-<div class="hero-actions">
-<a href="#demo" class="primary-btn">Book a Demo</a>
-<a href="#platform" class="secondary-btn">Explore Platform</a>
+<div style="margin-top:50px">
+<img src="images/dashboard.png" alt="Dashboard">
 </div>
-
-</div>
-
 </section>
-
 </div>
 
-<section id="platform">
+<section>
 <div class="container">
-
-<h2 class="section-title">Everything In One Place</h2>
-
-<p class="section-subtitle">
-Stop juggling spreadsheets, PDFs, wikis and disconnected tools.
-IntelScope centralizes your threat intelligence workflows.
-</p>
-
-<div class="grid">
-
-<div class="card">
-<h3>IOC Management</h3>
-<p>Track IPs, Domains, URLs, Hashes and Indicators in one searchable repository.</p>
+<div class="stats">
+<div class="stat"><h2>1.2M+</h2><p>IOCs</p></div>
+<div class="stat"><h2>250K+</h2><p>CVEs</p></div>
+<div class="stat"><h2>15K+</h2><p>Threat Actors</p></div>
+<div class="stat"><h2>50K+</h2><p>Dark Web Reports</p></div>
 </div>
-
-<div class="card">
-<h3>CVE Intelligence</h3>
-<p>Monitor vulnerabilities and enrich investigations with threat context.</p>
-</div>
-
-<div class="card">
-<h3>Threat Actors</h3>
-<p>Track adversaries, campaigns, TTPs and relationships.</p>
-</div>
-
-<div class="card">
-<h3>Dark Web Intelligence</h3>
-<p>Centralize leaked data, ransomware and underground monitoring.</p>
-</div>
-
-<div class="card">
-<h3>Security News</h3>
-<p>Aggregate industry intelligence from trusted sources.</p>
-</div>
-
-<div class="card">
-<h3>Correlation Engine</h3>
-<p>Connect indicators, actors and vulnerabilities instantly.</p>
-</div>
-
-</div>
-
 </div>
 </section>
 
 <section>
-
 <div class="container">
-
-<h2 class="section-title">Interactive Search Demo</h2>
-
-<div class="search-demo">
-
-<input
-id="search"
-class="search-box"
-placeholder="Try searching: APT29, CVE-2025-1234, IP Address..."
-
->
-
-<div id="result" class="result">
-<div class="result-card">
-<h3>Threat Actor: APT29</h3>
-<p>Associated with credential theft, phishing campaigns and multiple CVEs.</p>
-<br>
-<strong>Related IOCs:</strong> 57<br>
-<strong>Related CVEs:</strong> 12<br>
-<strong>Dark Web Mentions:</strong> 7
+<h2>Trusted By Security Teams</h2>
+<div class="trusted">
+<div>SOC Teams</div><div>MDR Providers</div><div>MSSPs</div><div>Threat Researchers</div><div>Enterprise Security</div>
 </div>
 </div>
+</section>
 
+<section class="graph">
+<div class="container center">
+<h2>Threat Correlation Graph</h2>
+<p>IOC ↔ CVE ↔ Malware ↔ Threat Actor relationships</p>
+<div style="margin-top:30px">
+<img src="images/graph.png" alt="Graph">
 </div>
-
 </div>
+</section>
 
+<section>
+<div class="container">
+<h2>Platform Screenshots</h2>
+<div class="screens">
+<div class="shot"><img src="images/dashboard.png"></div>
+<div class="shot"><img src="images/iocs.png"></div>
+<div class="shot"><img src="images/cves.png"></div>
+<div class="shot"><img src="images/malware.png"></div>
+<div class="shot"><img src="images/threatactors.png"></div>
+<div class="shot"><img src="images/graph2.png"></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Everything In One Place</h2>
+<div class="features">
+<div class="card"><h3>IOC Management</h3></div>
+<div class="card"><h3>CVE Intelligence</h3></div>
+<div class="card"><h3>Threat Actors</h3></div>
+<div class="card"><h3>Dark Web Monitoring</h3></div>
+<div class="card"><h3>Threat Correlation</h3></div>
+<div class="card"><h3>Security News</h3></div>
+<div class="card"><h3>Research Workspace</h3></div>
+<div class="card"><h3>Global Search</h3></div>
+</div>
+</div>
 </section>
 
 <section id="demo">
-
-<div class="container">
-
-<div class="cta">
-
-<h2>Ready To Centralize Threat Intelligence?</h2>
-
-<p>
-See how IntelScope helps SOC and Threat Research teams
-investigate faster and eliminate intelligence silos.
-</p>
-
-<a href="mailto:sales@intelscope.io" class="primary-btn">
-Book a Demo
-</a>
-
+<div class="container center">
+<h2>Book a Demo</h2>
+<p>Replace the Calendly URL below with your own.</p>
+<div class="calendly-inline-widget" data-url="https://calendly.com/rudra9pratap/30min" style="min-width:320px;height:700px;"></div>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </div>
-
-</div>
-
 </section>
 
-<footer>
-© 2026 IntelScope • Unified Threat Intelligence Platform
-</footer>
-
-<script>
-const search = document.getElementById('search');
-const result = document.getElementById('result');
-
-search.addEventListener('keyup', () => {
-
-const value = search.value.toLowerCase();
-
-if(
-value.includes('apt') ||
-value.includes('cve') ||
-value.includes('ip')
-){
-    result.style.display='block';
-}
-else{
-    result.style.display='none';
-}
-
-});
-</script>
-
+<footer>© 2026 IntelScope</footer>
 </body>
 </html>
